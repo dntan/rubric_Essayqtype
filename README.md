@@ -5,7 +5,7 @@ This is the brief for the JS rubrics.
 # Objectives
 - Create a clickable JS marking rubric that we can embed in the "grader information" of a Moodle Quiz Essay question type.
   - Use Bootstrap 4 buttons
-  - JS should change the appearance of the button if clicked on or off.
+  - JS should change the appearance of the button if clicked on or off. Buttons should react to other buttons on the same row.
   - a score for each criteron should be stored in a variable.
   - a final score, the sum of all criteron scores should be calculated and automatically entered into the grade field (or presented and another button appear to confirm the grade).
 
