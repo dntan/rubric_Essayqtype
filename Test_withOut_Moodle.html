@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rubric for Essay qtype</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function(){
+
+        function Clicker(x, y){
+
+            $(x).click(function(){
+                $(x).toggleClass("btn btn-success");
+                $(y).removeClass();
+                $(y).addClass("btn btn-primary btn-block");
+            });
+
+            $(y).click(function(){
+                $(y).toggleClass("btn btn-success");
+                $(x).removeClass();
+                $(x).addClass("btn btn-primary btn-block");
+            });
+
+        }
+
+        //Criteria toggle button functions.
+        Clicker(bad1, good1);
+        Clicker(bad2, good2);
+        Clicker(bad3, good3);
+        
+        
+        });
+    </script>
+
+</head>
+<body>
+    <div class="container">
+        <h2>Rubric for Essay qtype</h2>
+        <p>This rubric is a prototype for the Essay qtype. a custom solution.</p>
+        <table class="table table-dark table-striped">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Bad</th>
+                    <th>Good</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Criteria 1</td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-block" id="bad1">0</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-block" id="good1">1</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Criteria 2</td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-block" id="bad2">0</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-block" id="good2">1</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Criteria 3</td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-block" id="bad3">0</button>
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-primary btn-block" id="good3">1</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>    
+</body>
+</html>
