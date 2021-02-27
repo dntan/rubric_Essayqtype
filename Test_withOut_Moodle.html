@@ -14,18 +14,25 @@
     <script>
         $(document).ready(function(){
 
+        let totalScore = 0;
+
         function Clicker(x, y){
 
             $(x).click(function(){
                 $(x).toggleClass("btn btn-success");
                 $(y).removeClass();
                 $(y).addClass("btn btn-primary btn-block");
+                $(x).attr("disabled", true);
+                $(y).removeAttr("disabled");
             });
 
             $(y).click(function(){
                 $(y).toggleClass("btn btn-success");
                 $(x).removeClass();
                 $(x).addClass("btn btn-primary btn-block");
+                $(y).attr("disabled", true);
+                $(x).removeAttr("disabled");
+                //totalScore++;
             });
 
         }
@@ -35,7 +42,13 @@
         Clicker(bad2, good2);
         Clicker(bad3, good3);
         
-        
+        //try to calculate a value.
+
+        /* I could not figure this out yet. will try again tomorrow.
+        $("calc").click(function(){
+            $("#score").innerHTML = "Score = " + totalScore; 
+        });  
+        */
         });
     </script>
 
@@ -82,6 +95,13 @@
                 </tr>
             </tbody>
         </table>
-    </div>    
+    </div>
+
+    <div class="contain">
+        <button id="calc" class="btn btn-info">Calculate Score</button>
+            <br>
+        <p id="score"></p>
+    </div>
+    
 </body>
 </html>
