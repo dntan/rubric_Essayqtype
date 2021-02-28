@@ -42,31 +42,50 @@
 </div>
 
 <script>
-$(document).ready(function(){
+    $(document).ready(function(){
 
-    $("#bad1").click(function(){
-        $("#bad1").toggleClass("btn btn-success");
+    let totalScore = 0;
+
+    function Clicker(x, y){
+
+        $(x).click(function(){
+            $(x).toggleClass("btn btn-success");
+            $(y).removeClass();
+            $(y).addClass("btn btn-primary btn-block");
+            $(x).attr("disabled", true);
+            $(y).removeAttr("disabled");
+
+            //Adjust scoring
+                if (totalScore > 0) {
+                    totalScore--;
+                };
+
+        });
+
+        $(y).click(function(){
+            $(y).toggleClass("btn btn-success");
+            $(x).removeClass();
+            $(x).addClass("btn btn-primary btn-block");
+            $(y).attr("disabled", true);
+            $(x).removeAttr("disabled");
+
+            //Adjust scoring
+                totalScore++;
+        });
+
+    }
+
+    //Criteria toggle button functions.
+    Clicker(bad1, good1);
+    Clicker(bad2, good2);
+    Clicker(bad3, good3);
+    
+    //Calculate the rubric values and make them appear on the page.
+
+    $("#calc").click(function(){
+        // .html() seems to replace and update the string and the totalScore well.
+        $("#score").html("Total Score = " + totalScore);
+    });  
+    
     });
-
-    $("#good1").click(function(){
-        $("#good1").toggleClass("btn btn-success");
-    });
-
-    $("#bad2").click(function(){
-        $("#bad2").toggleClass("btn btn-success");
-    });
-
-    $("#good2").click(function(){
-        $("#good2").toggleClass("btn btn-success");
-    });
-
-    $("#bad3").click(function(){
-        $("#bad3").toggleClass("btn btn-success");
-    });
-
-    $("#good3").click(function(){
-        $("#good3").toggleClass("btn btn-success");
-    });
-
-});
 </script>
