@@ -24,6 +24,12 @@
                 $(y).addClass("btn btn-primary btn-block");
                 $(x).attr("disabled", true);
                 $(y).removeAttr("disabled");
+
+                //Adjust scoring
+                    if (totalScore > 0) {
+                        totalScore--;
+                    };
+
             });
 
             $(y).click(function(){
@@ -32,7 +38,9 @@
                 $(x).addClass("btn btn-primary btn-block");
                 $(y).attr("disabled", true);
                 $(x).removeAttr("disabled");
-                //totalScore++;
+
+                //Adjust scoring
+                    totalScore++;
             });
 
         }
@@ -42,13 +50,13 @@
         Clicker(bad2, good2);
         Clicker(bad3, good3);
         
-        //try to calculate a value.
+        //Calculate the rubric values and make them appear on the page.
 
-        /* I could not figure this out yet. will try again tomorrow.
-        $("calc").click(function(){
-            $("#score").innerHTML = "Score = " + totalScore; 
+        $("#calc").click(function(){
+            // .html() seems to replace and update the string and the totalScore well.
+            $("#score").html("Total Score = " + totalScore);
         });  
-        */
+        
         });
     </script>
 
